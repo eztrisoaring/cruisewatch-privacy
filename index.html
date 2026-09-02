@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隱私權政策 — 郵輪查房小幫手</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1f2328; --muted: #57606a;
+    --rule: #d8dee4; --accent: #c0392b; --card: #f6f8fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12141a; --fg: #e6e6e6; --muted: #9aa4b2;
+      --rule: #2b303a; --accent: #e8635a; --card: #1a1d25;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px 72px;
+    background: var(--bg); color: var(--fg);
+    font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  .updated { color: var(--muted); font-size: .9rem; margin-bottom: 28px; }
+  h2 {
+    font-size: 1.12rem; margin: 36px 0 10px; padding-top: 18px;
+    border-top: 1px solid var(--rule);
+  }
+  h3 { font-size: 1rem; margin: 22px 0 6px; color: var(--accent); }
+  p, li { margin: 8px 0; }
+  ul { padding-left: 22px; }
+  .note {
+    background: var(--card); border-left: 3px solid var(--accent);
+    padding: 12px 16px; margin: 18px 0; border-radius: 0 6px 6px 0;
+  }
+  code {
+    background: var(--card); padding: 1px 5px; border-radius: 4px;
+    font-size: .9em; word-break: break-all;
+  }
+  footer {
+    margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--rule);
+    color: var(--muted); font-size: .88rem;
+  }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+
+<h1>隱私權政策</h1>
+<p class="updated">應用程式：郵輪查房小幫手（com.ezlin.cruisewatch）<br>最後更新：2026 年 9 月 1 日</p>
+
+<div class="note">
+  本應用程式為個人開發之非官方工具，與星夢郵輪（Star Dream Cruises）及其母公司無任何
+  隸屬、合作或授權關係。本政策說明本應用程式如何處理您的資料。
+</div>
+
+<h2>一、我們不經營伺服器</h2>
+<p>
+  本應用程式<strong>沒有任何屬於開發者的後端伺服器</strong>。您的帳號、密碼、搜尋內容
+  都不會傳送到開發者持有或控制的主機。App 只會連線到兩個對象：星夢郵輪官方伺服器，
+  以及 Google 的 Firebase 服務（用於當機回報與匿名使用統計，詳見第四節）。
+</p>
+
+<h2>二、帳號與登入憑證</h2>
+<h3>密碼</h3>
+<p>
+  登入時，App 會在內建瀏覽器中開啟<strong>星夢郵輪官方登入網頁</strong>
+  （<code>sdr.stardreamcruises.com</code>）。您的會員編號與密碼是直接輸入至官方網頁並
+  傳送給官方伺服器。本應用程式<strong>不會儲存您的密碼</strong>，也不會將密碼傳送給
+  開發者或任何第三方。
+</p>
+<h3>存取權杖（Token）</h3>
+<p>
+  登入成功後，App 會取得官方核發的存取權杖與更新權杖，並<strong>僅儲存在您裝置本機</strong>
+  的私有應用程式空間中（Android 私有 SharedPreferences，其他應用程式無法讀取）。
+  這些權杖僅用於代表您向星夢郵輪官方 API 查詢資料。
+</p>
+<p>
+  本應用程式已停用 Android 雲端備份（<code>allowBackup="false"</code>），權杖不會被
+  備份到您的 Google 帳戶。
+</p>
+
+<h2>三、儲存在您裝置上的資料</h2>
+<p>以下資料僅存在於您的裝置本機，不會傳送給開發者：</p>
+<ul>
+  <li>存取權杖與更新權杖、權杖核發時間</li>
+  <li>會員姓名、會員卡別、客房積分數量與有效期限、獎賞數量</li>
+  <li>最近數筆搜尋結果與搜尋時間</li>
+  <li>行程名稱、出發日期、碼頭排班、您的預訂紀錄等查詢快取</li>
+  <li>您選擇的出發港口、人數、日期篩選範圍</li>
+  <li>是否已閱讀免責聲明</li>
+</ul>
+<p>
+  在 App 內執行「登出」會清除上述所有登入狀態與快取；解除安裝本應用程式則會刪除
+  全部本機資料。
+</p>
+
+<h2>四、傳送給第三方的資料</h2>
+
+<h3>星夢郵輪官方伺服器</h3>
+<p>
+  查詢客房空位、行程、出發日期、客房積分、您的預訂等功能，皆由 App 直接連線至星夢
+  郵輪官方 API（<code>backend-prd.b2m.stardreamcruises.com</code>）完成。這些請求的
+  內容與回應開發者無從得知。您與星夢郵輪之間的資料處理適用該公司自身的隱私權政策。
+</p>
+
+<h3>Google Firebase</h3>
+<p>本應用程式使用下列 Firebase 服務：</p>
+<ul>
+  <li>
+    <strong>Crashlytics（當機與錯誤回報）</strong>：當程式發生當機或例外時，會傳送
+    錯誤堆疊與診斷資訊。為了重現問題，報告中會包含操作足跡，其中可能含有：您當下
+    選擇的出發港口與人數、搜尋到的客房日期與房型名稱、以及<strong>您已預訂的航班
+    日期與房型</strong>。報告不含您的姓名、會員編號、密碼或權杖。
+  </li>
+  <li>
+    <strong>Analytics（使用統計）</strong>：會傳送您目前的客房積分數量（作為統計事件
+    與使用者屬性），以及 Firebase Analytics 自動收集的資訊，包含應用程式執行個體
+    識別碼、裝置型號、作業系統版本、依 IP 位址推估的概略地區與工作階段資料。
+  </li>
+  <li>
+    <strong>Cloud Messaging（推播通知）</strong>：用於接收開發者發送的全體公告。
+    裝置的推播識別碼由 Google 管理，本應用程式<strong>不會上傳或儲存</strong>該識別碼，
+    也無法對特定使用者單獨推播。
+  </li>
+</ul>
+<p>
+  上述資料的處理適用
+  <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 隱私權說明</a>
+  與 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隱私權政策</a>。
+</p>
+
+<h2>五、我們不做的事</h2>
+<ul>
+  <li>不販售您的個人資料，也不為廣告或行銷目的分享資料</li>
+  <li>不整合任何廣告聯播網；已明確移除廣告識別碼（AD_ID）權限</li>
+  <li>不收集精確位置、通訊錄、簡訊、通話紀錄、相片、麥克風或相機資料</li>
+  <li>不在背景持續執行或追蹤您的使用行為</li>
+</ul>
+
+<h2>六、權限說明</h2>
+<ul>
+  <li><strong>網際網路</strong>：連線至星夢郵輪官方 API 與 Firebase</li>
+  <li><strong>通知</strong>：在搜尋到可預訂客房、或登入失效時提醒您</li>
+</ul>
+
+<h2>七、資料刪除</h2>
+<p>
+  您可以隨時在 App 內點選「登出」清除本機的登入憑證與快取，或直接解除安裝本應用程式
+  以刪除所有本機資料。
+</p>
+<p>
+  若您希望刪除已傳送至 Firebase 的當機報告或統計資料，請透過下方電子郵件與開發者聯繫，
+  我們將在合理期間內處理。請注意，本應用程式無法刪除星夢郵輪官方持有的您的帳號資料，
+  該部分請直接洽詢星夢郵輪。
+</p>
+
+<h2>八、兒童隱私</h2>
+<p>
+  本應用程式並非以未滿 13 歲之兒童為對象，也不會刻意收集兒童的個人資料。
+</p>
+
+<h2>九、政策變更</h2>
+<p>
+  本政策如有修訂，將更新本頁最上方的「最後更新」日期。重大變更會透過應用程式內的
+  公告通知使用者。
+</p>
+
+<h2>十、聯絡方式</h2>
+<p>
+  如對本隱私權政策有任何疑問，請來信：<br>
+  <a href="mailto:cruisewatch2026@gmail.com">cruisewatch2026@gmail.com</a>
+</p>
+
+<footer>
+  郵輪查房小幫手 — 個人開發之非官方工具，與星夢郵輪及其母公司無隸屬或合作關係。
+</footer>
+
+</main>
+</body>
+</html>
